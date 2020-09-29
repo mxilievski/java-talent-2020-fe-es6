@@ -67,13 +67,13 @@ test('can make array filter chains more manageable', () => {
         }) // Find only remaining items with price < 5
         .sort(function (d) {
             return d.qty * -1;
-        }) // Sort by price, desc
+        }) // Sort by qty, desc
         .map(function (d) {
             return d.name;
         }); // Pull just the name from each item
 
     expect(shoppingList.shift())
-        .toBe('Bacon');
-    expect(shoppingList.shift())
         .toBe('JT Best Hits');
+    expect(shoppingList.shift())
+        .toBe('Bacon');
 });
